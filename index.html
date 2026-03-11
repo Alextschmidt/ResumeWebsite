@@ -1,53 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alexander Schmidt | Aerospace Engineering</title>
+
 <style>
-body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f5f5;color:#333;transition:0.3s}
-body.dark{background:#121212;color:#eee}
-header{background:#111;color:white;padding:40px 20px;text-align:center;transition:0.3s}
-body.dark header{background:#e0e0e0;color:#111}
-header h1{margin:0;font-size:40px;letter-spacing:4px}
-header p{margin-top:10px;font-style:italic}
-nav{margin-top:15px}
-nav a{color:white;text-decoration:none;border:1px solid white;padding:8px 14px;border-radius:6px;margin-right:10px;transition:0.3s}
-body.dark nav a{color:#111;border:1px solid #111;background:#e0e0e0}
-.toggle-btn{padding:8px 14px;border:none;border-radius:6px;cursor:pointer}
-.container{display:grid;grid-template-columns:300px 1fr;gap:40px;max-width:1100px;margin:auto;padding:40px 20px}
-.sidebar{background:white;padding:25px;border-radius:10px;transition:0.3s}
-body.dark .sidebar{background:#1e1e1e}
-.section{margin-bottom:30px}
-.section h2{font-size:16px;letter-spacing:2px;border-bottom:2px solid #eee;padding-bottom:6px}
-body.dark .section h2{border-color:#444}
-.section ul{padding-left:18px}
-.section-content{display:none;margin-top:10px}
-button{margin-top:10px;padding:6px 12px;border:none;background:#111;color:white;border-radius:6px;cursor:pointer}
-button:hover{background:#444}
-body.dark button{background:#333}
-.main{background:white;padding:30px;border-radius:10px;transition:0.3s}
-body.dark .main{background:#1e1e1e}
-.card{margin-top:20px}
-footer{text-align:center;padding:20px;color:#777}
-body.dark footer{color:#aaa}
-@media(max-width:800px){.container{grid-template-columns:1fr}}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+margin:0;
+background:#f5f5f5;
+color:#333;
+transition:0.3s
+}
+
+body.dark{
+background:#121212;
+color:#eee
+}
+
+header{
+background:#111;
+color:white;
+padding:40px 20px;
+text-align:center
+}
+
+body.dark header{
+background:#e0e0e0;
+color:#111
+}
+
+header h1{
+margin:0;
+font-size:40px;
+letter-spacing:4px
+}
+
+header p{
+margin-top:10px;
+font-style:italic
+}
+
+nav{
+margin-top:15px
+}
+
+nav a{
+color:white;
+text-decoration:none;
+border:1px solid white;
+padding:8px 14px;
+border-radius:6px;
+margin-right:10px;
+cursor:pointer
+}
+
+body.dark nav a{
+color:#111;
+border:1px solid #111;
+background:#e0e0e0
+}
+
+.toggle-btn{
+padding:8px 14px;
+border:none;
+border-radius:6px;
+cursor:pointer
+}
+
+.container{
+display:grid;
+grid-template-columns:300px 1fr;
+gap:40px;
+max-width:1100px;
+margin:auto;
+padding:40px 20px
+}
+
+.sidebar{
+background:white;
+padding:25px;
+border-radius:10px
+}
+
+body.dark .sidebar{
+background:#1e1e1e
+}
+
+.main{
+background:white;
+padding:30px;
+border-radius:10px
+}
+
+body.dark .main{
+background:#1e1e1e
+}
+
+.section{
+margin-bottom:30px
+}
+
+.section h2{
+font-size:16px;
+letter-spacing:2px;
+border-bottom:2px solid #eee;
+padding-bottom:6px
+}
+
+.section ul{
+padding-left:18px
+}
+
+.section-content{
+display:none;
+margin-top:10px
+}
+
+button{
+margin-top:10px;
+padding:6px 12px;
+border:none;
+background:#111;
+color:white;
+border-radius:6px;
+cursor:pointer
+}
+
+button:hover{
+background:#444
+}
+
+.resume-viewer{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.92);
+justify-content:center;
+align-items:center;
+z-index:1000
+}
+
+.resume-viewer img{
+max-width:95%;
+max-height:95%;
+border-radius:6px
+}
+
+.close-btn{
+position:absolute;
+top:20px;
+right:30px;
+font-size:40px;
+color:white;
+cursor:pointer
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#777
+}
+
+@media(max-width:800px){
+.container{
+grid-template-columns:1fr
+}
+}
+
 </style>
 </head>
+
 <body>
 
 <header>
+
 <h1>ALEXANDER SCHMIDT</h1>
 <p>Aerospace Engineering</p>
 
 <nav>
-<a href="#resume">View Resume</a>
+<a onclick="openResume()">View Resume</a>
 <button class="toggle-btn" onclick="toggleTheme()">Dark / Light</button>
 </nav>
 
 </header>
 
-<div class="container" id="resume">
+<div class="container">
 
 <div class="sidebar">
 
@@ -60,7 +203,6 @@ body.dark footer{color:#aaa}
 
 <div class="section">
 <h2>EDUCATION</h2>
-<strong>School</strong>
 <ul>
 <li>Munich International School</li>
 </ul>
@@ -84,9 +226,14 @@ body.dark footer{color:#aaa}
 <div class="section">
 <h2>PROFILE</h2>
 <button onclick="toggleSection('profile')">Show</button>
+
 <div id="profile" class="section-content">
 <p>
-I am a 14-year-old student who is very interested in aerospace engineering and how aircraft and rockets fly. I enjoy learning about space technology, aviation, and scientific discoveries. In my free time I like building models, watching documentaries about space, and exploring new STEM topics. My favourite subjects are mathematics, physics, and technology. In the future, I hope to study aerospace engineering and work in the aerospace industry.
+I am a 14-year-old student who is very interested in aerospace engineering and how aircraft and rockets fly.
+I enjoy learning about space technology, aviation, and scientific discoveries.
+In my free time I like building models, watching documentaries about space, and exploring new STEM topics.
+My favourite subjects are mathematics, physics, and technology.
+In the future, I hope to study aerospace engineering and work in the aerospace industry.
 </p>
 </div>
 </div>
@@ -94,46 +241,57 @@ I am a 14-year-old student who is very interested in aerospace engineering and h
 <div class="section">
 <h2>LEARNING EXPERIENCES AND SERVICE AS ACTION</h2>
 <button onclick="toggleSection('experience')">Show</button>
+
 <div id="experience" class="section-content">
 
-<div class="card">
 <h3>STEM Program</h3>
 <p>
-I participated in a STEM program where I worked with other students on science and engineering challenges. The program involved problem solving, teamwork, and designing solutions to different technical problems. This experience helped me develop my interest in engineering and improved my ability to think critically and work collaboratively.
+I participated in a STEM program where I worked with other students on science and engineering challenges.
+The program involved problem solving, teamwork, and designing solutions to different technical problems.
 </p>
-</div>
 
-<div class="card">
 <h3>Goal Umpire</h3>
 <p>
-I volunteered as a goal umpire for a school sports team. My responsibility was to watch the goal area carefully and make fair decisions during the game. This role required concentration, responsibility, and good communication with players and referees. It also helped me build confidence while supporting the team and the sport.
+I volunteered as a goal umpire for a school sports team. This role required concentration, responsibility,
+and communication with players and referees.
 </p>
-</div>
 
 </div>
 </div>
 
 </div>
-
 </div>
 
 <footer>
 <p>© 2026 Alexander Schmidt</p>
 </footer>
 
+<!-- FULLSCREEN RESUME VIEWER -->
+
+<div id="resumeViewer" class="resume-viewer">
+<span class="close-btn" onclick="closeResume()">✕</span>
+<img src="resume.png" alt="Resume">
+</div>
+
 <script>
+
 function toggleSection(id){
 const section=document.getElementById(id);
-if(section.style.display==='block'){
-section.style.display='none';
-}else{
-section.style.display='block';
-}
+section.style.display = section.style.display === "block" ? "none" : "block";
 }
 
 function toggleTheme(){
 document.body.classList.toggle('dark');
 }
+
+function openResume(){
+document.getElementById("resumeViewer").style.display="flex";
+}
+
+function closeResume(){
+document.getElementById("resumeViewer").style.display="none";
+}
+
 </script>
 
 </body>
