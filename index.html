@@ -1,1 +1,140 @@
-hallo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Alexander Schmidt | Aerospace Engineering</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f5f5f5;color:#333;transition:0.3s}
+body.dark{background:#121212;color:#eee}
+header{background:#111;color:white;padding:40px 20px;text-align:center;transition:0.3s}
+body.dark header{background:#e0e0e0;color:#111}
+header h1{margin:0;font-size:40px;letter-spacing:4px}
+header p{margin-top:10px;font-style:italic}
+nav{margin-top:15px}
+nav a{color:white;text-decoration:none;border:1px solid white;padding:8px 14px;border-radius:6px;margin-right:10px;transition:0.3s}
+body.dark nav a{color:#111;border:1px solid #111;background:#e0e0e0}
+.toggle-btn{padding:8px 14px;border:none;border-radius:6px;cursor:pointer}
+.container{display:grid;grid-template-columns:300px 1fr;gap:40px;max-width:1100px;margin:auto;padding:40px 20px}
+.sidebar{background:white;padding:25px;border-radius:10px;transition:0.3s}
+body.dark .sidebar{background:#1e1e1e}
+.section{margin-bottom:30px}
+.section h2{font-size:16px;letter-spacing:2px;border-bottom:2px solid #eee;padding-bottom:6px}
+body.dark .section h2{border-color:#444}
+.section ul{padding-left:18px}
+.section-content{display:none;margin-top:10px}
+button{margin-top:10px;padding:6px 12px;border:none;background:#111;color:white;border-radius:6px;cursor:pointer}
+button:hover{background:#444}
+body.dark button{background:#333}
+.main{background:white;padding:30px;border-radius:10px;transition:0.3s}
+body.dark .main{background:#1e1e1e}
+.card{margin-top:20px}
+footer{text-align:center;padding:20px;color:#777}
+body.dark footer{color:#aaa}
+@media(max-width:800px){.container{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+<h1>ALEXANDER SCHMIDT</h1>
+<p>Aerospace Engineering</p>
+
+<nav>
+<a href="#resume">View Resume</a>
+<button class="toggle-btn" onclick="toggleTheme()">Dark / Light</button>
+</nav>
+
+</header>
+
+<div class="container" id="resume">
+
+<div class="sidebar">
+
+<div class="section">
+<h2>CONTACT</h2>
+<p>📞 123-456-7890</p>
+<p>✉️ alexander_schmidt@mis-munich.de</p>
+<p>📍 Schloss Parking lot<br>Buchhofstraße<br>82319 Starnberg</p>
+</div>
+
+<div class="section">
+<h2>EDUCATION</h2>
+<strong>School</strong>
+<ul>
+<li>Munich International School</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>SKILLS</h2>
+<ul>
+<li>Strong skills in mathematics and trigonometry</li>
+<li>Good understanding of physics and science</li>
+<li>Clear communication skills</li>
+<li>Works well in teams</li>
+<li>Dedicated and motivated to learn</li>
+</ul>
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="section">
+<h2>PROFILE</h2>
+<button onclick="toggleSection('profile')">Show</button>
+<div id="profile" class="section-content">
+<p>
+I am a 14-year-old student who is very interested in aerospace engineering and how aircraft and rockets fly. I enjoy learning about space technology, aviation, and scientific discoveries. In my free time I like building models, watching documentaries about space, and exploring new STEM topics. My favourite subjects are mathematics, physics, and technology. In the future, I hope to study aerospace engineering and work in the aerospace industry.
+</p>
+</div>
+</div>
+
+<div class="section">
+<h2>LEARNING EXPERIENCES AND SERVICE AS ACTION</h2>
+<button onclick="toggleSection('experience')">Show</button>
+<div id="experience" class="section-content">
+
+<div class="card">
+<h3>STEM Program</h3>
+<p>
+I participated in a STEM program where I worked with other students on science and engineering challenges. The program involved problem solving, teamwork, and designing solutions to different technical problems. This experience helped me develop my interest in engineering and improved my ability to think critically and work collaboratively.
+</p>
+</div>
+
+<div class="card">
+<h3>Goal Umpire</h3>
+<p>
+I volunteered as a goal umpire for a school sports team. My responsibility was to watch the goal area carefully and make fair decisions during the game. This role required concentration, responsibility, and good communication with players and referees. It also helped me build confidence while supporting the team and the sport.
+</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Alexander Schmidt</p>
+</footer>
+
+<script>
+function toggleSection(id){
+const section=document.getElementById(id);
+if(section.style.display==='block'){
+section.style.display='none';
+}else{
+section.style.display='block';
+}
+}
+
+function toggleTheme(){
+document.body.classList.toggle('dark');
+}
+</script>
+
+</body>
+</html>
